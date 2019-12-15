@@ -1,8 +1,8 @@
 {
   "name": "cambieri-poc-pwa",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "Cambieri.it Mobile Team",
+  "homepage": "https://cambieri.it/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
@@ -18,7 +18,9 @@
     "@angular/forms": "~8.1.2",
     "@angular/platform-browser": "~8.1.2",
     "@angular/platform-browser-dynamic": "~8.1.2",
+    "@angular/pwa": "^0.803.20",
     "@angular/router": "~8.1.2",
+    "@angular/service-worker": "~8.1.2",
     "@ionic-native/core": "^5.0.0",
     "@ionic-native/splash-screen": "^5.0.0",
     "@ionic-native/status-bar": "^5.0.0",
@@ -54,5 +56,5 @@
     "tslint": "~5.15.0",
     "typescript": "~3.4.3"
   },
-  "description": "An Ionic project"
+  "description": "Progressive Web App Proof of Concept"
 }

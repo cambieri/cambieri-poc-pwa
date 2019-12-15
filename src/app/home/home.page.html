@@ -1,14 +1,57 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      PWA POC
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
   <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
+    <h4>Relevant point of attention:</h4>
+    <ul>
+      <li>index.html<ul>
+          <li>only change the title</li>
+        </ul>
+      </li>
+      <li>app.component<ul>
+          <li>remove everything about Platform, SplashScreen, StatusBar</li>
+          <li>the initializeApp function</li>
+        </ul>
+      <li>internal pages<ul>
+          <li>nothing to do</li>
+        </ul>
+      </li>
+      <li>ngsw-config.json<ul>
+          <li>add "/manifest.webmanifest" in app section</li>
+          <li>add ONLY THE USED SVG in assets section!!! In this case:<ul>
+              <li> "/svg/ios-flag.svg"</li>
+              <li>"/svg/md-flag.svg"</li>
+            </ul>
+          </li>
+          <li>set "installMode": "prefetch" in assets section</li>
+        </ul>
+      </li>
+      <li>manifest.webmanifest<ul>
+          <li>set "scope" and "start_url" corresponding to the deploy dir (for example: "/poc/pwa/" if the final url is https://develop.cambieri.net/poc/pwa/)</li>
+        </ul>
+      </li>
+      <li>VERY IMPORTANT:<ul>
+          <li>build with this command "ionic build --prod -- --base-href /poc/pwa/" where the "--base-href" param MUST correspond to the "scope" and "start_url" set in the manifest.webmanifest</li>
+          <li>when you deploy, delete the old files (expecially from root)</li>
+          <li>deploy ONLY THE USED SVG</li>
+        </ul>
+      </li>
+      <li>enjoy...</li>
+    </ul>
+    <ion-list>
+      <ion-item *ngFor="let item of mockList" (click)="onCountryClick(item)">
+        <ion-label>{{item.desc}}</ion-label>
+        <ion-icon slot="end" name="flag"></ion-icon>
+      </ion-item>
+    </ion-list>
+    <p>Select a Country...
+      <ion-img [src]="'./assets/img/' + selectedCountry.flag"></ion-img>
+    </p>
   </div>
 </ion-content>

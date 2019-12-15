@@ -1,1 +1,21 @@
+ul > li {
+  font-family: 'Courier New', Courier, monospace;
+  font-size: small;
+  font-weight: bold;
+}
 
+ul > li li {
+  font-weight: normal;
+}
+
+p {
+  margin-left: 40px;
+  line-height: 100px;
+}
+
+ion-img {
+  display: inline-block;
+  max-width: 100px;
+  vertical-align: middle;
+  margin-left: 30px;
+}
